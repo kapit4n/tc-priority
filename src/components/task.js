@@ -1,10 +1,12 @@
-export default function Task({ name }) {
+export default function Task({ name, onUp, onDown }) {
     return (
-        <div style={{ display: 'flex', width: '30rem', justifyContent: "space-between" }}>
-            {name} <span>
-                <button>UP</button>
-                <button>DOWN</button>
-            </span>
-        </div>
+        <li>
+            <div style={{ display: 'flex', width: '30rem', justifyContent: "space-between" }}>
+                {name} <span>
+                    <button onClick={onUp}>UP</button>
+                    <button onClick={onDown}>DOWN</button>
+                </span>
+            </div>
+        </li>
     )
 }
