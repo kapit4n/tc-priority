@@ -1,5 +1,23 @@
 [
     {
+        "name": "General",
+        "tasks": [
+            "Owasp top 10",
+            "Clean Code",
+            "Best Practices",
+            "Authorization"
+        ]
+    },
+    {
+        "name": "React JS",
+        "tasks": [
+            "Security",
+            "Performance tips",
+            "Design patterns",
+            "Memory leaks"
+        ]
+    },
+    {
         "name": "TeamCity",
         "tasks": [
             "Review Teamcity",
