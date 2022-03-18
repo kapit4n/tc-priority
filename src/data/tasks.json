@@ -1,6 +1,15 @@
 [
-    "Review Teamcity", 
-    "Artifacts",
-    "Download artifacts",
-    "Agent packages"
+    {
+        "name": "TeamCity",
+        "tasks": [
+            "Review Teamcity",
+            "Artifacts",
+            "Download artifacts",
+            "Agent programs",
+            "Wget on agents",
+            "Urls to get artifacts",
+            "Teamcity deploy",
+            "zip and unzip artifacts"
+        ]
+    }
 ]

@@ -1,22 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import TaskList from './components/task-list';
+import Topic from './components/topic';
 import tasksJson from './data/tasks.json'
 import { useState } from 'react';
 
 function App() {
 
-  const [tasksJsonState, setTasksJsonState] = useState(tasksJson)
+  const [topics, setTopics] = useState(tasksJson)
 
   const onUp = (index) => {
-    setTasksJsonState(tasks => {
-      return [...tasks.slice(0, index - 1), tasks[index], tasks[index - 1], ...tasks.slice(index + 1)]
+
+    const tasks = topics[0].tasks
+    const movedUp = [...tasks.slice(0, index - 1), tasks[index], tasks[index - 1], ...tasks.slice(index + 1)]
+
+    setTopics(topics => {
+      return [{...topics[0], tasks: movedUp}]
     })
   }
 
   const onDown = (index) => {
-    setTasksJsonState(tasks => {
-      return [...tasks.slice(0, index), tasks[index + 1], tasks[index], ...tasks.slice(index + 2)]
+
+    const tasks = topics[0].tasks
+    const movedUp = [...tasks.slice(0, index), tasks[index + 1], tasks[index], ...tasks.slice(index + 2)]
+
+    setTopics(topics => {
+      return [{...topics[0], tasks: movedUp}]
     })
   }
 
@@ -27,7 +34,8 @@ function App() {
       </header>
 
       <div className="App-body">
-        <TaskList list={tasksJsonState} onUp={onUp} onDown={onDown} />
+        {topics.map((t, index) => <Topic topic={t} onUp={onUp} onDown={onDown} />)}
+
       </div>
     </div>
   );
