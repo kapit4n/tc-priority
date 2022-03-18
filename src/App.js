@@ -7,24 +7,22 @@ function App() {
 
   const [topics, setTopics] = useState(tasksJson)
 
-  const onUp = (index) => {
+  const onUp = (topicIndex, index) => {
 
-    const tasks = topics[0].tasks
+    const tasks = topics[topicIndex].tasks
     const movedUp = [...tasks.slice(0, index - 1), tasks[index], tasks[index - 1], ...tasks.slice(index + 1)]
+    topics[topicIndex].tasks = movedUp
 
-    setTopics(topics => {
-      return [{...topics[0], tasks: movedUp}]
-    })
+    setTopics([...topics])
   }
 
-  const onDown = (index) => {
+  const onDown = (topicIndex, index) => {
 
-    const tasks = topics[0].tasks
-    const movedUp = [...tasks.slice(0, index), tasks[index + 1], tasks[index], ...tasks.slice(index + 2)]
+    const tasks = topics[topicIndex].tasks
+    const movedDown = [...tasks.slice(0, index), tasks[index + 1], tasks[index], ...tasks.slice(index + 2)]
+    topics[topicIndex].tasks = movedDown
 
-    setTopics(topics => {
-      return [{...topics[0], tasks: movedUp}]
-    })
+    setTopics([...topics])
   }
 
   return (
@@ -34,7 +32,7 @@ function App() {
       </header>
 
       <div className="App-body">
-        {topics.map((t, index) => <Topic topic={t} onUp={onUp} onDown={onDown} />)}
+        {topics.map((t, topicIndex) => <Topic topic={t} onUp={onUp} onDown={onDown} topicIndex={topicIndex}/>)}
 
       </div>
     </div>

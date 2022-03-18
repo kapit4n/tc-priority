@@ -11,5 +11,19 @@
             "Teamcity deploy",
             "zip and unzip artifacts"
         ]
+    },
+    {
+        "name": "Goland",
+        "tasks": [
+            "Generics",
+            "Goroutines",
+            "Common packages",
+            "Modules",
+            "While on golang",
+            "References vs Pointers",
+            "Errors",
+            "Panic"
+        ]
     }
+
 ]
