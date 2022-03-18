@@ -13,7 +13,7 @@
         ]
     },
     {
-        "name": "Goland",
+        "name": "Golang",
         "tasks": [
             "Generics",
             "Goroutines",
@@ -24,6 +24,15 @@
             "Errors",
             "Panic"
         ]
+    },
+    {
+        "name": "Python",
+        "tasks": [
+            "Classes",
+            "Slices",
+            "Machine learning",
+            "Data Structures",
+            "Errors"
+        ]
     }
-
 ]
